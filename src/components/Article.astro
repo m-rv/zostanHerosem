@@ -1,0 +1,29 @@
+---
+interface Props {
+  width?: number;
+  left?: boolean;
+}
+
+const { width = 50, left = false } = Astro.props;
+const divStyle = left
+  ? "bg-[#F6F6F6] absolute h-full top-0 left-0 -z-10"
+  : "bg-[#F6F6F6] absolute h-full top-0 right-0 -z-10";
+
+const skewSvgPoints = left ? "0 0, 15 100, 0 100" : "15 0, 0 100, 15 100";
+const skewSvgClass = left
+  ? "absolute top-0 left-full h-full text-[#F6F6F6]"
+  : "absolute top-0 right-full h-full text-[#F6F6F6]";
+---
+
+<article class="w-full relative p-10 after:absolute my-20">
+  <div style=`width: ${width}%` class={divStyle}>
+    <svg viewBox="0 0 15 100" class={skewSvgClass}>
+      <polygon fill="currentColor" points={skewSvgPoints}></polygon>
+    </svg>
+  </div>
+  <div
+    class="flex items-center justify-center gap-20 max-md:flex-col max-w-[var(--content-width)] mx-auto"
+  >
+    <slot />
+  </div>
+</article>

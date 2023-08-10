@@ -1,0 +1,37 @@
+---
+interface Props {
+  alt?: string;
+  path: string;
+  width: number;
+  height: number;
+}
+
+const { alt, path, width, height } = Astro.props;
+const skew = 15;
+const skewRadian = (skew * Math.PI) / 180;
+const imageLeft = `-${Math.tan(skewRadian) * height}px`;
+---
+
+<div class="outer">
+  <img src={path} alt={alt} />
+</div>
+
+<style define:vars={{ width, height, imageLeft }}>
+  .outer {
+    width: calc(var(--width) * 1px);
+    height: calc(var(--height) * 1px);
+    transform: skew(-15deg, 0);
+    overflow: hidden;
+    background-color: rgb(51, 30, 128);
+
+    margin: 200px;
+  }
+
+  .outer img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: skew(15deg, 0);
+    left: var(--imageLeft);
+  }
+</style>
