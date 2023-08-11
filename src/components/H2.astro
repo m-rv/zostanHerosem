@@ -1,3 +1,15 @@
-<h2 class="before: text-3xl font-extrabold uppercase">
+<h2 class="relative block text-3xl font-extrabold uppercase">
   <slot />
 </h2>
+<style>
+  h2::before {
+    content: "";
+    background-color: var(--primary);
+    position: absolute;
+    width: 2px;
+    height: 2.2rem;
+    left: -2rem;
+    top: -0.15rem;
+    transform: skew(-7deg);
+  }
+</style>
