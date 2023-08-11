@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Article from "../components/Article.astro";
 import H2 from "../components/H2.astro";
+import Carousel from "../components/Carousel.astro";
 
 const title = "Zostań Herosem";
 ---
@@ -11,7 +12,9 @@ const title = "Zostań Herosem";
     <H2>Zostań Herosem... na lata!</H2>
   </Article>
   <Article left width={70}>
-    <img src="images/dziecko.jpg" class="h-72" />
+    <Carousel
+      images={["herosi01.png", "herosi02.png", "herosi03.png", "herosi04.png"]}
+    />
     <span class="text-lg">
       <strong
         >„Marzę o milionie darczyńców, którzy co miesiąc wpłacą nam złotówkę...”</strong

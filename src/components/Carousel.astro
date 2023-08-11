@@ -1,0 +1,48 @@
+---
+interface Props {
+  images: string[];
+  timeout?: number;
+}
+
+const { images = [], timeout = 5000 } = Astro.props;
+---
+
+<astro-carousel
+  data-timeout={timeout}
+  data-images={images.length}
+  class="relative w-96 overflow-hidden"
+>
+  <div class="slider relative right-0 flex flex-row duration-1000">
+    {
+      images.map((image) => (
+        <img src={`images/herosi/${image}`} class="w-full" />
+      ))
+    }
+  </div>
+</astro-carousel>
+
+<script>
+  class Carousel extends HTMLElement {
+    constructor() {
+      super();
+      let counter = 0;
+      const timeout = Number(this.dataset.timeout);
+      const length = Number(this.dataset.images);
+
+      const slider = this.querySelector(".slider");
+      if (!slider) {
+        return;
+      }
+      const interval = setInterval(() => {
+        const width = this.offsetWidth;
+        console.log(slider.scrollWidth);
+
+        counter = counter >= length - 1 ? 0 : counter + 1;
+        slider?.style.setProperty("right", `${counter * width}px`);
+      }, timeout);
+    }
+  }
+
+  // Tell the browser to use our AstroHeart class for <astro-heart> elements.
+  customElements.define("astro-carousel", Carousel);
+</script>
