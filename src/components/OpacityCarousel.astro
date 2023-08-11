@@ -1,0 +1,45 @@
+---
+interface Props {
+  images: string[];
+  timeout?: number;
+}
+
+const { images = [], timeout = 5000 } = Astro.props;
+---
+
+<astro-carousel-opacity
+  data-timeout={timeout}
+  data-images={images.length}
+  class="relative h-96 w-96 overflow-hidden"
+>
+  {
+    images.map((image) => (
+      <img
+        src={`images/herosi/${image}`}
+        class="absolute w-full opacity-0 duration-1000"
+      />
+    ))
+  }
+</astro-carousel-opacity>
+
+<script>
+  class OpacityCarousel extends HTMLElement {
+    constructor() {
+      super();
+      let counter = 0;
+      const timeout = Number(this.dataset.timeout);
+      const length = Number(this.dataset.images);
+      const images = this.querySelectorAll("img");
+
+      const interval = setInterval(() => {
+        counter = counter >= length - 1 ? 0 : counter + 1;
+        images.forEach((image, index) => {
+          image.style.setProperty("opacity", index === counter ? "1" : "0");
+        });
+      }, timeout);
+    }
+  }
+
+  // Tell the browser to use our AstroHeart class for <astro-heart> elements.
+  customElements.define("astro-carousel-opacity", OpacityCarousel);
+</script>
