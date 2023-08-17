@@ -35,8 +35,6 @@ const { images = [], timeout = 5000 } = Astro.props;
       }
       const interval = setInterval(() => {
         const width = this.offsetWidth;
-        console.log(slider.scrollWidth);
-
         counter = counter >= length - 1 ? 0 : counter + 1;
         slider?.style.setProperty("right", `${counter * width}px`);
       }, timeout);
