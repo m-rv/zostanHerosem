@@ -1,0 +1,17 @@
+<h1
+  class="relative block text-[26pt] font-bold uppercase text-[var(--primary)]"
+>
+  <slot />
+</h1>
+<style>
+  h1::before {
+    content: "";
+    background-color: var(--primary);
+    position: absolute;
+    width: 2px;
+    height: 2.2rem;
+    left: -2rem;
+    top: -0.15rem;
+    transform: skew(-7deg);
+  }
+</style>
