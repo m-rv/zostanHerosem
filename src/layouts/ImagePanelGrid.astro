@@ -9,13 +9,17 @@ const panels = await getCollection("panels");
   class="mx-auto grid max-w-[var(--grid-content-width)] gap-10 max-lg:grid-cols-1 lg:grid-cols-2"
 >
   {
-    panels.map((panel, index) => (
-      <ImagePanel
-        image={panel.data.image}
-        title={panel.data.title}
-        content={panel.body}
-        index={index}
-      />
-    ))
+    panels
+      .sort((a, b) => a.data.order - b.data.order)
+      .map(async (panel, index) => {
+        return (
+          <ImagePanel
+            image={panel.data.image}
+            title={panel.data.title}
+            content={panel.body}
+            index={index}
+          />
+        );
+      })
   }
 </div>

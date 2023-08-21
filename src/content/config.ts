@@ -5,6 +5,7 @@ const panelCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     image: z.string(),
+    order: z.number(),
   }),
 });
 
