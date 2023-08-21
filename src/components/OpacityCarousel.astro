@@ -10,7 +10,7 @@ const { images = [], timeout = 5000 } = Astro.props;
 <astro-carousel-opacity
   data-timeout={timeout}
   data-images={images.length}
-  class="relative h-96 w-96 overflow-hidden"
+  class="relative h-[300px] w-[300px] overflow-hidden"
 >
   {
     images.map((image) => (
@@ -31,11 +31,16 @@ const { images = [], timeout = 5000 } = Astro.props;
       const length = Number(this.dataset.images);
       const images = this.querySelectorAll("img");
 
-      const interval = setInterval(() => {
+      const loop = () => {
         counter = counter >= length - 1 ? 0 : counter + 1;
         images.forEach((image, index) => {
           image.style.setProperty("opacity", index === counter ? "1" : "0");
         });
+      };
+
+      loop();
+      const interval = setInterval(() => {
+        loop();
       }, timeout);
     }
   }
