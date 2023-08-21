@@ -20,7 +20,6 @@ if (index % 4 === 0) {
 ---
 
 <section class=`flex ${flow} items-center max-md:flex-col bg-[#F6F6F6]`>
-  <div class="absolute h-72 w-72 filter"></div>
   <img src={image} class="h-72 w-72" />
   <div class="flex flex-col items-center gap-10 p-10 text-justify">
     <span>
@@ -29,10 +28,3 @@ if (index % 4 === 0) {
     <span class="font-bold uppercase">{title}</span>
   </div>
 </section>
-<style>
-  .filter {
-    background-color: var(--dark-primary);
-    opacity: 0.6;
-    z-index: 2;
-  }
-</style>
