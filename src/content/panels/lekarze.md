@@ -1,5 +1,5 @@
 ---
-title: "Zapewniamy im nowoczesny sprzęt i narzędzia do pracy"
+title: "Zapewniamy im nowoczesne narzędzia do pracy"
 image: "images/lekarze.png"
 order: 1
 ---

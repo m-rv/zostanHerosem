@@ -15,14 +15,14 @@ const skewSvgClass = left
   : "absolute top-0 right-full h-full text-[#F6F6F6]";
 ---
 
-<article class="relative my-20 w-full p-10">
+<article class="relative my-20 w-full">
   <div style=`width: ${width}%` class={divStyle}>
     <svg viewBox="0 0 15 100" class={skewSvgClass}>
       <polygon fill="currentColor" points={skewSvgPoints}></polygon>
     </svg>
   </div>
   <div
-    class="mx-auto flex max-w-[var(--content-width)] items-center justify-center gap-20 max-md:flex-col"
+    class="mx-auto flex max-w-[var(--content-width)] items-center justify-center gap-24 max-md:flex-col"
   >
     <slot />
   </div>
