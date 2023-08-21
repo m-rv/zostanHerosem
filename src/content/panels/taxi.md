@@ -1,6 +1,7 @@
 ---
 title: "Wozimy je taksówkami"
-image: "images/dziecko.jpg"
+image: "images/taxi.png"
+order: 0
 ---
 
-"Nasze dzieci mają obniżonąodporność, dlatego nie pozwalamy im jeździć komunikacją miejską."
+"Nasze dzieci mają obniżoną odporność, dlatego nie pozwalamy im jeździć komunikacją miejską."

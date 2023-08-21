@@ -1,6 +1,7 @@
 ---
 title: "Wsperamy ich finansowo"
-image: "images/dziecko.jpg"
+image: "images/rodzice.png"
+order: 2
 ---
 
 "Rodzice naszych dzieciaków stają czasem przed wyzwaniem zakupu leków, które nie są refundowane przez państwo."
