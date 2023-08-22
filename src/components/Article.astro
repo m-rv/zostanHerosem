@@ -2,9 +2,10 @@
 interface Props {
   width?: number;
   left?: boolean;
+  paddingY?: boolean;
 }
 
-const { width = 50, left = false } = Astro.props;
+const { width = 50, left = false, paddingY = false } = Astro.props;
 const divStyle = left
   ? "bg-[#F6F6F6] absolute h-full top-0 left-0 -z-10"
   : "bg-[#F6F6F6] absolute h-full top-0 right-0 -z-10";
@@ -15,14 +16,14 @@ const skewSvgClass = left
   : "absolute top-0 right-full h-full text-[#F6F6F6]";
 ---
 
-<article class="relative my-20 w-full">
+<article class:list={["relative my-20 w-full", paddingY && "py-14"]}>
   <div style=`width: ${width}%` class={divStyle}>
     <svg viewBox="0 0 15 100" class={skewSvgClass}>
       <polygon fill="currentColor" points={skewSvgPoints}></polygon>
     </svg>
   </div>
   <div
-    class="mx-auto flex max-w-[var(--content-width)] items-center justify-center gap-24 max-md:flex-col"
+    class="mx-auto flex max-w-[var(--content-width)] items-center justify-between gap-24 max-md:flex-col"
   >
     <slot />
   </div>
