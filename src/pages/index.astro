@@ -6,12 +6,16 @@ import H2 from "../components/H2.astro";
 import H4 from "../components/H4.astro";
 import ImagePanelGrid from "../layouts/ImagePanelGrid.astro";
 import OpacityCarousel from "../components/OpacityCarousel.astro";
+import SkewButton from "../components/SkewButton.astro";
+import LogoHerosi from "../components/LogoHerosi.astro";
 
 const title = "#ZostanHerosem";
+
+const onclick = () => console.log("Dupppa");
 ---
 
 <Layout title={title}>
-  <Article left>
+  <Article left width={42} paddingY>
     <div>
       <H1>Od 2009 roku wspieramy dzieci</H1>
       <H2>z chorobami nowotworowimy</H2>
@@ -30,7 +34,7 @@ const title = "#ZostanHerosem";
       </p>
     </span>
   </Article>
-  <Article width={40}>
+  <Article width={50}>
     <OpacityCarousel
       images={[
         "Adam.png",
@@ -41,14 +45,18 @@ const title = "#ZostanHerosem";
         "Martyna.png",
       ]}
     />
-    <span class="max-w-[50%] text-lg">
-      <strong
-        >„Marzę o milionie darczyńców, którzy co miesiąc wpłacą nam złotówkę...”</strong
-      > – to są słowa Prezes Fundacji Herosi, Małgorzaty Dutkiewicz, które
-      dokładnie obrazują nasze ambicje.
-    </span>
+    <div class="flex max-w-[50%]">
+      <div class="flex flex-col justify-center gap-8 p-5">
+        <p>Możesz do nas dołączyć i budować z dzieciakami lwy!</p>
+        <p>Abo wesprzeć nas cykliczną wpłatą. Tak czy inaczej...</p>
+        <SkewButton href="https://zrzutka.pl/zostanherosem/pay">
+          Zostań Herosem
+        </SkewButton>
+      </div>
+      <img src="/zostanHerosem/images/lew.png" class="w-[300px]" />
+    </div>
   </Article>
-  <Article left width={60}>
+  <Article left width={50}>
     <span class="max-w-[50%]">
       <H4>Na co zostaną wydane moje pieniądze</H4>
       <p>Jeżeli zdecyduję się na wsparcie finansowe?</p>
@@ -61,4 +69,22 @@ const title = "#ZostanHerosem";
     <img src="/zostanHerosem/images/dzieci.png" class="max-h-[400px]" />
   </Article>
   <ImagePanelGrid />
+  <Article>
+    <img src="/zostanHerosem/images/wrona.png" class="max-h-[400px]" />
+    <div class="flex h-full flex-1 flex-col items-center gap-20">
+      <div class="fill-white">
+        <p class="text-lg font-medium uppercase">Dowiedz się więcej</p>
+        <SkewButton href="https://herosi.eu">
+          <LogoHerosi />
+        </SkewButton>
+      </div>
+      <div>
+        <p class="text-lg font-medium uppercase">Wesprzyj nas</p>
+        <SkewButton href="https://zrzutka.pl/zostanherosem/pay">
+          WPŁAĆ
+        </SkewButton>
+      </div>
+    </div>
+    <img src="/zostanHerosem/images/magik.png" class="max-h-[400px]" />
+  </Article>
 </Layout>

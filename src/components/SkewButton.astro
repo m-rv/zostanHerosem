@@ -1,0 +1,34 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<astro-button
+  class="h-fit w-fit cursor-pointer whitespace-nowrap uppercase text-white"
+>
+  <a target="_blank" href={href}>
+    <div
+      class="inner relative mx-3 p-5 transition-all duration-200 before:bg-[var(--primary)] hover:mx-0 hover:px-8 hover:before:bg-[var(--dark-primary)]"
+    >
+      <slot />
+    </div>
+  </a>
+</astro-button>
+<style>
+  .inner::before {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: skewX(-7deg);
+  }
+  .inner:hover::before {
+    padding-right: 10px;
+  }
+</style>
