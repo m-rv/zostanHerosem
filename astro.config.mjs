@@ -7,5 +7,5 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://m-rv.github.io",
   base: "zostanHerosem",
-  integrations: [tailwind(), react()],
+  integrations: [tailwind({ applyBaseStyles: false }), react()],
 });
