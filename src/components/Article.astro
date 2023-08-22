@@ -2,24 +2,34 @@
 interface Props {
   width?: number;
   left?: boolean;
+  top?: boolean;
   paddingY?: boolean;
 }
 
-const { width = 50, left = false, paddingY = false } = Astro.props;
-const divStyle = left
-  ? "bg-[#F6F6F6] absolute h-full top-0 left-0 -z-10"
-  : "bg-[#F6F6F6] absolute h-full top-0 right-0 -z-10";
+const { width = 50, left = false, top = false, paddingY = false } = Astro.props;
 
-const skewSvgPoints = left ? "0 0, 15 100, 0 100" : "15 0, 0 100, 15 100";
-const skewSvgClass = left
-  ? "absolute top-0 left-full h-full text-[#F6F6F6]"
-  : "absolute top-0 right-full h-full text-[#F6F6F6]";
+const topPointCoord = top ? "0" : "100";
+const skewSvgPoints = left
+  ? `0 0, 15 ${topPointCoord}, 0 100`
+  : `15 0, 0 ${topPointCoord}, 15 100`;
 ---
 
 <article class:list={["relative my-20 w-full", paddingY && "py-14"]}>
-  <div style=`width: ${width}%` class={divStyle}>
-    <svg viewBox="0 0 15 100" class={skewSvgClass}>
-      <polygon fill="currentColor" points={skewSvgPoints}></polygon>
+  <div
+    style=`width: ${width}%`
+    class:list={[
+      "absolute top-0 -z-10 h-full bg-[#F6F6F6]",
+      left ? "left-0" : "right-0",
+    ]}
+  >
+    <svg
+      viewBox="0 0 15 100"
+      class:list={[
+        "absolute top-0 h-full fill-[#F6F6F6]",
+        left ? "left-full" : "right-full",
+      ]}
+    >
+      <polygon points={skewSvgPoints}></polygon>
     </svg>
   </div>
   <div

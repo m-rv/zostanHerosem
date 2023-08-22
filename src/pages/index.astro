@@ -34,7 +34,7 @@ const onclick = () => console.log("Dupppa");
       </p>
     </span>
   </Article>
-  <Article width={50}>
+  <Article width={50} top>
     <OpacityCarousel
       images={[
         "Adam.png",
@@ -45,7 +45,7 @@ const onclick = () => console.log("Dupppa");
         "Martyna.png",
       ]}
     />
-    <div class="flex max-w-[50%]">
+    <div class="flex max-w-[50%] gap-5">
       <div class="flex flex-col justify-center gap-8 p-5">
         <p>Możesz do nas dołączyć i budować z dzieciakami lwy!</p>
         <p>Abo wesprzeć nas cykliczną wpłatą. Tak czy inaczej...</p>
@@ -75,7 +75,7 @@ const onclick = () => console.log("Dupppa");
       <div class="fill-white">
         <p class="text-lg font-medium uppercase">Dowiedz się więcej</p>
         <SkewButton href="https://herosi.eu">
-          <LogoHerosi />
+          <LogoHerosi width={120} />
         </SkewButton>
       </div>
       <div>
