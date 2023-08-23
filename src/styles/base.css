@@ -9,7 +9,7 @@
     font-size: 18px;
   }
   h3 {
-    @apply text-xl font-bold;
+    @apply text-lg font-semibold;
   }
   p {
     @apply my-4;
