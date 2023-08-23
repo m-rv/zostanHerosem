@@ -5,7 +5,7 @@ interface Props {
   paddingY?: boolean;
 }
 
-const { gap = 30, top = false, paddingY = false } = Astro.props;
+const { gap = 300, top = false, paddingY = false } = Astro.props;
 
 const skewSvgPointsLeft = `0 0, 15 ${top ? "100" : "0"}, 0 100`;
 const skewSvgPointsRight = `15 0, 0 ${top ? "0" : "100"}, 15 100`;
