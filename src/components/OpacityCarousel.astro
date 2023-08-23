@@ -10,7 +10,7 @@ const { images = [], timeout = 5000 } = Astro.props;
 <astro-carousel-opacity
   data-timeout={timeout}
   data-images={images.length}
-  class="relative h-auto w-1/2 self-stretch overflow-hidden"
+  class="relative aspect-square w-full overflow-hidden"
 >
   {
     images.map((image) => (

@@ -8,6 +8,7 @@ import ImagePanelGrid from "../layouts/ImagePanelGrid.astro";
 import OpacityCarousel from "../components/OpacityCarousel.astro";
 import SkewButton from "../components/SkewButton.astro";
 import LogoHerosi from "../components/LogoHerosi.astro";
+import ArticleSymetric from "../components/ArticleSymetric.astro";
 
 const title = "#ZostanHerosem";
 ---
@@ -32,7 +33,7 @@ const title = "#ZostanHerosem";
       </p>
     </div>
   </Article>
-  <Article width={50} top>
+  <Article width={45} top>
     <OpacityCarousel
       images={[
         "Adam.png",
@@ -53,7 +54,7 @@ const title = "#ZostanHerosem";
           Zostań Herosem
         </SkewButton>
       </div>
-      <!-- <img src="/zostanHerosem/images/lew.png" class="w-[300px]" /> -->
+      <img src="/zostanHerosem/images/lew.png" class="w-[300px]" />
     </div>
   </Article>
   <Article left width={50}>
@@ -69,7 +70,7 @@ const title = "#ZostanHerosem";
     <img src="/zostanHerosem/images/dzieci.png" class="max-h-[400px]" />
   </Article>
   <ImagePanelGrid />
-  <Article>
+  <ArticleSymetric gap={360}>
     <img src="/zostanHerosem/images/wrona.png" class="max-h-[400px]" />
     <div class="flex h-full flex-1 flex-col items-center gap-20">
       <div class="fill-white">
@@ -86,5 +87,5 @@ const title = "#ZostanHerosem";
       </div>
     </div>
     <img src="/zostanHerosem/images/magik.png" class="max-h-[400px]" />
-  </Article>
+  </ArticleSymetric>
 </Layout>
