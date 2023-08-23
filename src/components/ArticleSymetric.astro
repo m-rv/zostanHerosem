@@ -5,37 +5,25 @@ interface Props {
   paddingY?: boolean;
 }
 
-const { gap = 100, top = false, paddingY = false } = Astro.props;
+const { gap = 30, top = false, paddingY = false } = Astro.props;
 
 const skewSvgPointsLeft = `0 0, 15 ${top ? "100" : "0"}, 0 100`;
 const skewSvgPointsRight = `15 0, 0 ${top ? "0" : "100"}, 15 100`;
 ---
 
-<article class:list={["relative my-20 w-full", paddingY && "py-14"]}>
-  <div
-    style=`width: calc(50vw - ${gap/2}px)`
-    class="absolute left-0 top-0 -z-10 h-full bg-[#F6F6F6]"
-  >
-    <svg
-      viewBox="0 0 15 100"
-      class="absolute left-full top-0 h-full fill-[#F6F6F6]"
-    >
-      <polygon points={skewSvgPointsLeft}></polygon>
-    </svg>
+<article
+  class:list={[
+    "relative my-20 flex w-full justify-center",
+    paddingY && "py-14",
+  ]}
+>
+  <div class="absolute -z-10 flex h-full w-full justify-center bg-[#F6F6F6]">
+    <div style=`width: ${gap}px; transform: skewX(-7deg);` class="bg-white">
+    </div>
   </div>
+
   <div
-    style=`width: calc(50vw - ${gap/2}px)`
-    class="absolute right-0 top-0 -z-10 h-full bg-[#F6F6F6]"
-  >
-    <svg
-      viewBox="0 0 15 100"
-      class="absolute right-full top-0 h-full fill-[#F6F6F6]"
-    >
-      <polygon points={skewSvgPointsRight}></polygon>
-    </svg>
-  </div>
-  <div
-    class="mx-auto flex max-w-[var(--content-width)] items-center justify-between gap-24 max-md:flex-col"
+    class="flex w-[var(--content-width)] items-center justify-between max-md:flex-col"
   >
     <slot />
   </div>
