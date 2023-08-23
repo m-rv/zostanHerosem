@@ -1,11 +1,12 @@
 ---
 import * as kontakt from "./kontakt.md";
 import * as bankowe from "./informacje_bankowe.md";
+import Social from "../components/Social.astro";
 ---
 
 <footer class="mt-20 w-full bg-[#444444] lg:h-56">
   <div
-    class="flex h-full flex-row justify-center gap-5 text-white max-md:flex-col max-md:items-center"
+    class="flex h-full flex-row justify-center text-white max-md:flex-col max-md:items-center"
   >
     <svg viewBox="0 0 160 160" class="max-lg:w-56">
       <g>
@@ -19,5 +20,6 @@ import * as bankowe from "./informacje_bankowe.md";
     </svg>
     <div set:html={kontakt.compiledContent()} class="p-3" />
     <div set:html={bankowe.compiledContent()} class="p-3" />
+    <Social />
   </div>
 </footer>
