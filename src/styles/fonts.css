@@ -1,53 +1,53 @@
 @font-face {
   font-family: "Geomanist";
   font-weight: 100;
-  src: url("/zostanHerosem/fonts/Geomanist-Thin.otf");
+  src: url("/fonts/Geomanist-Thin.otf");
 }
 
 @font-face {
   font-family: "Geomanist";
   font-weight: 200;
-  src: url("/zostanHerosem/fonts/Geomanist-ExtraLight.otf");
+  src: url("/fonts/Geomanist-ExtraLight.otf");
 }
 
 @font-face {
   font-family: "Geomanist";
   font-weight: 300;
-  src: url("/zostanHerosem/fonts/Geomanist-Light.otf");
+  src: url("/fonts/Geomanist-Light.otf");
 }
 
 @font-face {
   font-family: "Geomanist";
   font-weight: 400;
-  src: url("/zostanHerosem/fonts/Geomanist-Regular.otf");
+  src: url("/fonts/Geomanist-Regular.otf");
 }
 
 @font-face {
   font-family: "Geomanist";
   font-weight: 500;
-  src: url("/zostanHerosem/fonts/Geomanist-Book.otf");
+  src: url("/fonts/Geomanist-Book.otf");
 }
 
 @font-face {
   font-family: "Geomanist";
   font-weight: 600;
-  src: url("/zostanHerosem/fonts/Geomanist-Medium.otf");
+  src: url("/fonts/Geomanist-Medium.otf");
 }
 
 @font-face {
   font-family: "Geomanist";
   font-weight: 700;
-  src: url("/zostanHerosem/fonts/Geomanist-Bold.otf");
+  src: url("/fonts/Geomanist-Bold.otf");
 }
 
 @font-face {
   font-family: "Geomanist";
   font-weight: 800;
-  src: url("/zostanHerosem/fonts/Geomanist-Black.otf");
+  src: url("/fonts/Geomanist-Black.otf");
 }
 
 @font-face {
   font-family: "Geomanist";
   font-weight: 900;
-  src: url("/zostanHerosem/fonts/Geomanist-Ultra.otf");
+  src: url("/fonts/Geomanist-Ultra.otf");
 }

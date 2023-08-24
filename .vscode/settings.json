@@ -1,5 +1,5 @@
 {
-  "svg.preview.background": "black",
+  "svg.preview.background": "transparent",
   "editor.quickSuggestions": {
     "strings": "on"
   },
