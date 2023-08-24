@@ -19,12 +19,15 @@ import Social from "../components/Social.astro";
       </g>
     </svg>
     <div class="flex flex-row max-md:flex-col max-md:items-start">
-      <div set:html={kontakt.compiledContent()} class="p-3" />
-      <div set:html={bankowe.compiledContent()} class="p-3" />
-      <div class="p-3">
+      <div set:html={kontakt.compiledContent()} class="p-3 pb-0" />
+      <div set:html={bankowe.compiledContent()} class="p-3 pb-0" />
+      <div class="p-3 pb-0">
         <h3>Social media</h3>
         <Social />
       </div>
     </div>
+  </div>
+  <div class="px-10 text-right text-xs text-white">
+    Copyright © 2023 Fundacja Herosi
   </div>
 </footer>
