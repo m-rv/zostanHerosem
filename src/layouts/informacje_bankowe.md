@@ -1,7 +1,6 @@
 ### Informacje bankowe
 
-Bank PKO BP S.A.
-
+Bank PKO BP S.A.  
 PLN 04 1020 1068 0000 1302 0171 1613
 
 **REGON** 141756065  
