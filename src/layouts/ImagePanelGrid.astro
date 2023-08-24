@@ -16,8 +16,8 @@ const panels = await getCollection("panels");
           <ImagePanel
             image={panel.data.image}
             title={panel.data.title}
-            content={panel.body}
             index={index}
+            panel={panel}
           />
         );
       })

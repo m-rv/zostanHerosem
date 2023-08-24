@@ -17,7 +17,7 @@ const title = "#ZostanHerosem";
   <Article left width={55} paddingY>
     <div class="md:ml-10">
       <H1>Od 2009 roku wspieramy dzieci</H1>
-      <H2>z chorobami nowotworowymi</H2>
+      <H2>z&nbsp;chorobami nowotworowymi</H2>
     </div>
   </Article>
   <Article width={53} top>
@@ -78,9 +78,9 @@ const title = "#ZostanHerosem";
       <p>
         Z zebranych funduszy przekazaliśmy już blisko 2,5 mln zł:
         <ul class="list-disc ps-4">
-          <li>1,3 mln zła na sprzet medyczny i narzędzia</li>
-          <li>270 tys. zł na system wentylacji klimatyzacji w klinice</li>
-          <li>900 tys. zł na nierefundowane badania i leki</li>
+          <li>1,3 mln zła na sprzet medyczny i&nbsp;narzędzia</li>
+          <li>270 tys. zł na system wentylacji klimatyzacji w&nbsp;klinice</li>
+          <li>900 tys. zł na nierefundowane badania i&nbsp;leki</li>
           <li>150 tys. zł na transport pacjentów na zabiegi</li>
         </ul>
       </p>
@@ -90,7 +90,12 @@ const title = "#ZostanHerosem";
   <ImagePanelGrid />
   <ArticleSymetric gap={300}>
     <img src="/zostanHerosem/images/wrona.png" class="max-h-[400px]" />
-    <div class="flex h-full flex-1 flex-col items-center gap-20">
+    <div
+      class:list={[
+        "flex h-full flex-1 flex-col items-center gap-16",
+        "max-md:mb-6 max-md:gap-6",
+      ]}
+    >
       <div class="fill-white">
         <p class="text-center text-lg font-medium uppercase">
           Dowiedz się więcej

@@ -1,12 +1,14 @@
 ---
+import type { AstroComponentFactory } from "astro/dist/runtime/server";
+import type { CollectionEntry } from "astro:content";
 interface Props {
   image: string;
   title: string;
-  content: string;
   index: number;
+  panel: CollectionEntry<"panels">;
 }
 
-const { image, title, content, index } = Astro.props;
+const { image, title, panel, index } = Astro.props;
 let flow;
 if (index % 4 === 0) {
   flow = "flex-row";
@@ -17,13 +19,14 @@ if (index % 4 === 0) {
 } else {
   flow = "flex-row-reverse";
 }
+const { Content } = await panel.render();
 ---
 
 <section class=`flex ${flow} items-center max-md:flex-col bg-[#F6F6F6]`>
   <img src={image} class="h-72 w-72" />
-  <div class="flex flex-col items-center gap-10 px-10 text-justify">
-    <span>
-      {content}
+  <div class="flex flex-col items-center gap-10 px-10">
+    <span class="text-justify">
+      <Content />
     </span>
     <span class="font-bold uppercase">{title}</span>
   </div>
