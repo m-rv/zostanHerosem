@@ -1,5 +1,5 @@
 ---
-title: "Wsperamy ich finansowo"
+title: "Wspieramy ich finansowo"
 image: "images/rodzice.png"
 order: 2
 ---

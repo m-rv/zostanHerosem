@@ -1,5 +1,5 @@
 ---
-title: "Dostają od nas sprzęt reahbilitacyjny"
+title: "Dostają od nas sprzęt rehabilitacyjny"
 image: "images/sprzet.png"
 order: 3
 ---
