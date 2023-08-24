@@ -33,7 +33,10 @@ const skewSvgPoints = left
     </svg>
   </div>
   <div
-    class="mx-auto flex max-w-[var(--content-width)] items-center justify-between gap-24 max-md:flex-col"
+    class:list={[
+      "mx-auto flex max-w-[var(--content-width)] items-center justify-between gap-24",
+      "max-[var(--content-width)]:flex-col max-lg:px-8",
+    ]}
   >
     <slot />
   </div>
