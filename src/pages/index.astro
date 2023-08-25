@@ -5,10 +5,10 @@ import H1 from "../components/H1.astro";
 import H2 from "../components/H2.astro";
 import H4 from "../components/H4.astro";
 import ImagePanelGrid from "../layouts/ImagePanelGrid.astro";
-import OpacityCarousel from "../components/OpacityCarousel.astro";
 import SkewButton from "../components/SkewButton.astro";
 import LogoHerosi from "../components/LogoHerosi.astro";
 import ArticleSymetric from "../components/ArticleSymetric.astro";
+import GalleryFader from "../components/GalleryFader.astro";
 
 const title = "#ZostanHerosem";
 ---
@@ -21,7 +21,7 @@ const title = "#ZostanHerosem";
     </div>
   </Article>
   <Article width={53} top>
-    <OpacityCarousel
+    <GalleryFader
       images={[
         "Adam.png",
         "Aga.png",

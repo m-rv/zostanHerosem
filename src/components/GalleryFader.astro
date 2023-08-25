@@ -1,0 +1,131 @@
+---
+interface Props {
+  images: string[];
+  timeout?: number;
+}
+
+const { images = [] } = Astro.props;
+---
+
+<div class="fader">
+  <img src={`images/herosi/${images[0]}`} id="sizer" />
+  {
+    images.map((image, index) => (
+      <img src={`images/herosi/${image}`} id={`f${index + 1}`} />
+    ))
+  }
+</div>
+<style>
+  .fader {
+    position: relative;
+  }
+  .fader #sizer {
+    position: relative;
+    opacity: 0;
+  }
+  .fader img:not(#sizer) {
+    object-fit: contain;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 40s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 40s;
+  }
+
+  @-webkit-keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    12.5% {
+      opacity: 1;
+    }
+    15% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0;
+    }
+    37.5% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    62.5% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+    }
+    87.5% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fade {
+    0% {
+      opacity: 0;
+    }
+    2.5% {
+      opacity: 1;
+    }
+    12.5% {
+      opacity: 1;
+    }
+    15% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0;
+    }
+    37.5% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    62.5% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 0;
+    }
+    87.5% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  #f2 {
+    -webkit-animation-delay: -35s;
+  }
+  #f3 {
+    -webkit-animation-delay: -30s;
+  }
+  #f4 {
+    -webkit-animation-delay: -25s;
+  }
+  #f5 {
+    -webkit-animation-delay: -20s;
+  }
+  #f6 {
+    -webkit-animation-delay: -15s;
+  }
+  #f7 {
+    -webkit-animation-delay: -10s;
+  }
+  #f8 {
+    -webkit-animation-delay: -5s;
+  }
+</style>
