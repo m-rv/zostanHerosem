@@ -16,14 +16,15 @@ const { href } = Astro.props;
 >
   <a target="_blank" href={href} class="h-full w-full fill-white">
     <div
-      class="inner relative flex h-full w-full items-center justify-center before:bg-[var(--dark-primary)] hover:before:bg-[var(--primary)]"
+      class="inner relative flex h-full w-full items-center justify-center bg-[var(--dark-primary)] before:bg-[var(--dark-primary)] hover:bg-[var(--primary)] hover:before:bg-[var(--primary)]"
     >
       <slot />
     </div>
   </a>
 </div>
 <style>
-  .inner::before {
+  .inner::before,
+  .inner::after {
     content: "";
     z-index: -1;
     position: absolute;
@@ -33,7 +34,16 @@ const { href } = Astro.props;
     bottom: 0;
     transform: skewX(-7deg);
   }
-  .inner:hover::before {
+  .inner:hover::before,
+  .inner:hover::after {
+    padding-right: 10px;
+  }
+  .inner::after {
+    background: transparent;
+    outline: 15px solid white;
+    z-index: 2;
+  }
+  .inner:hover::after {
     padding-right: 10px;
   }
 </style>
