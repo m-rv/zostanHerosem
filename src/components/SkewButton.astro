@@ -6,7 +6,8 @@ interface Props {
 const { href } = Astro.props;
 ---
 
-<astro-button
+<div
+  role="button"
   class:list={[
     "cursor-pointer whitespace-nowrap uppercase text-white transition-all duration-200",
     "block h-[80px] min-w-[240px]",
@@ -20,7 +21,7 @@ const { href } = Astro.props;
       <slot />
     </div>
   </a>
-</astro-button>
+</div>
 <style>
   .inner::before {
     content: "";
