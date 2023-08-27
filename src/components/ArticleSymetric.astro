@@ -15,6 +15,7 @@ const skewSvgPointsRight = `15 0, 0 ${top ? "0" : "100"}, 15 100`;
   class:list={[
     "relative my-20 flex w-full justify-center",
     paddingY && "py-14",
+    "reveal",
   ]}
 >
   <div class="absolute -z-10 flex h-full w-full justify-center bg-[#F6F6F6]">
@@ -28,3 +29,15 @@ const skewSvgPointsRight = `15 0, 0 ${top ? "0" : "100"}, 15 100`;
     <slot />
   </div>
 </article>
+<style>
+  .reveal.pending {
+    transform: translateY(5vw);
+    opacity: 0.3;
+  }
+
+  .reveal {
+    transform: translateY(0);
+    opacity: 1;
+    transition: 0.8s ease-in-out;
+  }
+</style>

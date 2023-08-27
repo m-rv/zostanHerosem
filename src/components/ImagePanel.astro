@@ -19,10 +19,11 @@ if (index % 4 === 0) {
 } else {
   flow = "flex-row-reverse";
 }
+const revealDirection = index % 2 === 0 ? -1 : 1;
 const { Content } = await panel.render();
 ---
 
-<section class=`flex ${flow} items-center max-md:flex-col bg-[#F6F6F6]`>
+<section class=`flex ${flow} items-center max-md:flex-col bg-[#F6F6F6] reveal`>
   <img src={image} class="h-72 w-72" />
   <div class="flex flex-col items-center gap-10 px-10">
     <span class="text-justify">
@@ -31,3 +32,15 @@ const { Content } = await panel.render();
     <span class="font-bold uppercase">{title}</span>
   </div>
 </section>
+<style define:vars={{ revealDirection }}>
+  .reveal.pending {
+    transform: translateX(calc(5vw * var(--revealDirection)));
+    opacity: 0.3;
+  }
+
+  .reveal {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 0.8s ease-in-out;
+  }
+</style>

@@ -12,9 +12,11 @@ const topPointCoord = top ? "0" : "100";
 const skewSvgPoints = left
   ? `0 0, 15 ${topPointCoord}, 0 100`
   : `15 0, 0 ${topPointCoord}, 15 100`;
+
+const revealDirection = left ? -1 : 1;
 ---
 
-<article class:list={["relative my-20 w-full", paddingY && "py-14"]}>
+<article class:list={["relative my-20 w-full", paddingY && "py-14", "reveal"]}>
   <div
     style=`width: ${width}%`
     class:list={[
@@ -41,3 +43,15 @@ const skewSvgPoints = left
     <slot />
   </div>
 </article>
+<style define:vars={{ revealDirection }}>
+  .reveal.pending {
+    transform: translateX(calc(5vw * var(--revealDirection)));
+    opacity: 0.3;
+  }
+
+  .reveal {
+    transform: translateX(0);
+    opacity: 1;
+    transition: 0.8s ease-in-out;
+  }
+</style>
